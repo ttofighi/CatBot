@@ -8,4 +8,6 @@ This bot was intended as a learning tool for creating a bot that responds on com
 - Replit: Allows bot to log onto Discord
 
 # API Reference
+- https://docs.thecatapi.com/
+- 
 
