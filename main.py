@@ -2,6 +2,7 @@ import discord
 import os
 import requests
 import json
+import random
 
 #searches for the discord client
 client = discord.Client()
@@ -26,12 +27,15 @@ def getCatPic():
     newResponse = i['url'] #gets the url key for cat pictures
   return(newResponse)
 
+
 def getCatBreed():
-  response = requests.get('https://api.thecatapi.com/v1/breeds/search?name')
+  value = [] 
+  response = requests.get('https://api.thecatapi.com/v1/breeds')
   json_data = json.loads(response.text)
-  for i in json_data:
-    newResponse = i['name'] #WIP: will get a random cat breed and information
-  return(newResponse)
+  for i in json_data: 
+    newResponse = i["name"]#WIP: will get a random cat breed and information
+    value.append(newResponse)
+  return(value)
 
 @client.event
 async def on_ready():
@@ -57,6 +61,7 @@ async def on_message(message):
 
   if message.content.startswith('!cat breed'):
     breed = getCatBreed()
+    breed = random.choice(breed)
     await message.channel.send(breed) #WIP
 
   if message.content.startswith('!about'):
