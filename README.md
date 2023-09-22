@@ -1,6 +1,5 @@
 # CatBot
-A discord bot that sends the user cat pictures, breed information, and facts on request. Currently, the bot won't send cat facts because the JSON data won't load properly at this time.
-
+A discord bot that sends the user cat pictures, breed information, and facts on request
 # Motivation
 
 
